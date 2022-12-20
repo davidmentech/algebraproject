@@ -19,3 +19,6 @@ and the given N. The result was 3023178.
 therefore e's order in U_N is calculated with Euler's formula: phi(N)=phi(991)=(991-1)=990.
 According to the RSA protocol we must calculate e's inverse is calculated in U_phi(N); however, e does not belong to U_phi(N) and thus there is
 no inverse for it - E(x) is not invertible.
+
+5. Using RSA algorythm we calculated the N - the product of p & q, chose e from phi(N), and the encrypted message:
+message = 777, e = 18127 encrypted = 52033348

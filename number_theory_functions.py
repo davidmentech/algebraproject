@@ -170,10 +170,13 @@ def task5():
     q=7919
     p=6841
     N=q*p
-    while True:
+    """while True:
         e=generate_prime(5)
         if(e!=q and e!=p):
             break
+    """
+    e=18127
+    print(e)
     message=777
     encrypted=modular_exponent(message,e,N)
     print(encrypted)
