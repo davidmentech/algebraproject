@@ -1,12 +1,20 @@
 1. Since 1 million can't be divided by 911 we must use Euclid Algorithm on gcd(911,7879). 
 If 1 million can be divided by the result (In our case it can, so the deal is doable) than, we find the linear combination of 911 and 7879 that brings us to 1 million.
 The numbers that we multiply 7879 and 911 by in the combination are exactly the number of transactions of 7879 and 911 dollars between Loki and Spider-Man  to complete the deal.
+
+
 2. We need to find the hundred's digit of 456457^(7896543^74365753), a=456457,b=7896543,c=74365753. to find hundred's digit we will 
 do (a^(b^c))%1000/100 and this will get us the number.
 We will get the remainder of 456457 by 1000 which is 457, we see that gcd(457,1000)=1, then according to statement that we saw in 
 class (Euler sentence). 457^phi(1000)=1 (mod 1000). phi(1000)=400 than we will only need to calculate a^(b^c mod(400)).
 Let's look at b^c, b%400=143, we see that gcd(143,400)=1 ,so 143^phi(400)=1(mod 400), phi(400)=160,so the power of b that we need to calculate is only c%160.
 we got that a^(b^c)=(457^(143^153 mod(400)))mod(1000)=d, then we need to calculate d%1000/100=9 
+
+
+3. We calculated the prime elements of N using the internet (found they were e=3499 and 3491), then we calculated phi(N) based on the fact these prime numbers' product is N.
+Then we found e's inverse in U_(phi(N)) and by the RSA Protocol we found d - our key (5425399), so we used the algorythm of RSA decryption using the encrypted message (42), our key,
+and the given N. The result was 3023178.
+
 4. We are given that e=11 and N=991. These numbers are both prime numbers and thus their greatest common divider (gcd) is 1, 
 therefore e's order in U_N is calculated with Euler's formula: phi(N)=phi(991)=(991-1)=990.
 According to the RSA protocol we must calculate e's inverse is calculated in U_phi(N); however, e does not belong to U_phi(N) and thus there is

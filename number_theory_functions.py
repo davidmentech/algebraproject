@@ -43,7 +43,18 @@ def modular_inverse(a,n):
     -------
     x: such that (a*x % n) == 1 and 0 <= x < n if one exists, else None
     """
-
+    gcd,x,y = extended_gcd(a, n)
+    if (gcd != 1):
+        #print("Inverse doesn't exist")
+        return None
+ 
+    else:
+ 
+        # m is added to handle negative x
+        res = (x % n + n) % n
+        #print("Modular multiplicative inverse is ", res)
+        return res
+        
 
 def phi(n):
  
@@ -145,14 +156,32 @@ def task1():
 def task2():
     k=phi(1000)
     sum1=modular_exponent(7896543,74365753%phi(k),k)
-    #print(modular_exponent(456457,sum1,1000)//100)
-    print(modular_exponent(143,153,400))
-    print(modular_exponent(457,143,1000))
+    print(modular_exponent(456457,sum1,1000)//100)
 
+
+    
+def task3():
+     # a=3491 b=3499,a*b=c, c=12215009 ,phi(c)=12208020 inverse(3499)=5425399 messege=3023178
+    d=modular_inverse(3499,12208020)
+    x=modular_exponent(42,d,12215009)
+    print(modular_exponent(x,3499,12215009))
+
+def task5():
+    q=7919
+    p=6841
+    N=q*p
+    while True:
+        e=generate_prime(5)
+        if(e!=q and e!=p):
+            break
+    message=777
+    encrypted=modular_exponent(message,e,N)
+    print(encrypted)
 
 if __name__=="__main__":
     #task1()
-    task2()
-
+    #task2()
+    #task3()
+    task5()
 
 

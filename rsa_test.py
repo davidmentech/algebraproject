@@ -1,6 +1,6 @@
 import unittest
 import number_theory_functions
-from algebraproject.rsa_functions import RSA
+from rsa_functions import RSA
 
 class TestNumberTheory(unittest.TestCase):
     def test_extended_gcd(self):
@@ -31,6 +31,5 @@ class TestRSA(unittest.TestCase):
             C = rsa.encrypt(M)
             MM = rsa.decrypt(C)
             self.assertEqual(M,MM)
-
 if __name__ == '__main__':
     unittest.main()
